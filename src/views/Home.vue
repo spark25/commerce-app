@@ -42,14 +42,23 @@
       <more-info />
     </section>
 
-    <sector class="section__support">
+    <!-- testimonial section  -->
+    <section class="section__testimonials">
+      <div class="section_title">
+        Trusted by Agencies<br />&amp; Store Owners
+      </div>
+      <testimonial  />
+    </section>
+
+    <!-- support/people section  -->
+    <section class="section__support">
       <div class="section_title">Supported by real people</div>
       <div class="section_subtitle">
         Our team of Engineers works remotely from 44 countries providing
         customer<wbr />support across multiple time zones.
       </div>
       <support />
-    </sector>
+    </section>
   </div>
 </template>
 
@@ -58,6 +67,7 @@ import FeatureCards from "../components/FeatureCards.vue";
 import MoreInfo from "../components/MoreInfo.vue";
 import Navbar from "../components/Navbar.vue";
 import Support from "../components/Support.vue";
+import Testimonial from "../components/Testimonial.vue";
 
 export default {
   name: "Home",
@@ -66,10 +76,13 @@ export default {
     FeatureCards,
     MoreInfo,
     Support,
+    Testimonial,
   },
 
   data() {
-    return {};
+    return {
+ 
+    };
   },
 };
 </script>
@@ -181,6 +194,22 @@ export default {
     minmax(1rem, 220px)
     minmax(500px, 1480px)
     minmax(1rem, 220px);
+}
+
+.section__testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 206px 220px;
+  background: linear-gradient(
+    180deg,
+    rgba(236, 240, 253, 0) 0%,
+    rgba(236, 240, 253, 0.53) 14.32%,
+    #ecf0fd 45.83%,
+    rgba(236, 240, 253, 0.43) 84.33%,
+    rgba(236, 240, 253, 0) 100%
+  );
 }
 
 .btn__cta {
