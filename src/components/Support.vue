@@ -8,7 +8,9 @@
         Commerce - the most customizable eCommerce<br />
         platform for building your online business.
       </div>
-      <button class="btn btn__cta light">GET STARTED</button>
+      <button class="btn btn__cta light">
+        <span class="btn_text">GET STARTED</span>
+      </button>
 
       <!-- Elements  -->
       <div class="_ellipse _ellipse__1">
