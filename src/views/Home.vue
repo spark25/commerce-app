@@ -46,7 +46,7 @@
       <div class="section_title">Supported by real people</div>
       <div class="section_subtitle">
         Our team of Engineers works remotely from 44 countries providing
-        customer<wbr>support across multiple time zones.
+        customer<wbr />support across multiple time zones.
       </div>
       <support />
     </sector>
