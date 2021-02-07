@@ -11,7 +11,7 @@ $screen-sm-min: 576px;
 // Small tablets (portrait view)
 $screen-md-min: 768px;
 
-// Tablets and small desktopspopp
+// Tablets and small desktops
 $screen-lg-min: 992px;
 
 // Large tablets and desktops
@@ -66,7 +66,7 @@ a {
 }
 
 body {
-  overflow-x: hidden;
+  // overflow-x: hidden;
   font-family: "Roboto", sans-serif;
 }
 
@@ -147,28 +147,39 @@ nav a {
     padding: 26px 62px;
   }
 
-  &.primary {
-    background: #7854f7;
+  &.small {
+    padding: 22px 26px;
+  }
 
+  &.success {
+    background: #70c217;
     color: #fff;
     transition: all 0.25s ease;
+    &:hover {
+      background: rgba(111, 194, 23, 0.9);
+    }
+  }
 
+  &.primary {
+    background: #7854f7;
+    color: #fff;
+    transition: all 0.25s ease;
     &:hover {
       background: rgba(119, 84, 247, 0.9);
     }
   }
   &.light {
-    color: #7854f7;
+    color: #fff;
     font-family: "Roboto";
     font-weight: 500;
     font-size: 18px;
     line-height: 21px;
     background: transparent;
     transition: all 0.25s ease;
-    border: 1px solid #7854f7;
+    border: 1px solid #fff;
 
     &:hover {
-      background: rgba(119, 84, 247, 0.05);
+      background: rgba(255, 255, 255, 0.05);
     }
   }
 
@@ -205,4 +216,12 @@ nav a {
   box-shadow: none;
   margin-left: 30px;
   cursor: pointer;
+}
+
+.__divider {
+  width: 100%;
+  height: 1px;
+  background: #9a7dff;
+  display: block;
+  margin-bottom: 34px;
 }

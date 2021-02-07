@@ -1,8 +1,10 @@
 <template>
   <div class="section__home">
+    <!-- top nav  -->
     <navbar />
+
+    <!-- hero section  -->
     <section class="section__hero d_flex">
-      <!-- <div class="d_flex"> -->
       <div class="hero_text flex_1 d_flex flex_column">
         <h1 class="hero_title montserrat font-bold">
           Anyone, anywhere can start an ecommerce website
@@ -22,9 +24,11 @@
           </button>
         </div>
       </div>
+      <!-- contains the hero preview image as background  -->
       <div class="hero_image flex_1"></div>
-      <!-- </div> -->
     </section>
+
+    <!-- feature section  -->
     <section class="section__feature">
       <div class="section_title">
         Your eCommerce <br />
@@ -32,18 +36,36 @@
       </div>
       <feature-cards />
     </section>
+
+    <!-- more features section  -->
+    <section class="section__moreinfo">
+      <more-info />
+    </section>
+
+    <sector class="section__support">
+      <div class="section_title">Supported by real people</div>
+      <div class="section_subtitle">
+        Our team of Engineers works remotely from 44 countries providing
+        customer<wbr>support across multiple time zones.
+      </div>
+      <support />
+    </sector>
   </div>
 </template>
 
 <script>
 import FeatureCards from "../components/FeatureCards.vue";
+import MoreInfo from "../components/MoreInfo.vue";
 import Navbar from "../components/Navbar.vue";
+import Support from "../components/Support.vue";
 
 export default {
   name: "Home",
   components: {
     Navbar,
     FeatureCards,
+    MoreInfo,
+    Support,
   },
 
   data() {
@@ -115,18 +137,50 @@ export default {
   }
 
   .section__feature {
+  }
+
+  .section_title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 70px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #272d4e;
+    margin-bottom: 69px;
+  }
+
+  .section_subtitle {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #94a2b3;
+    white-space: pre-wrap;
+    margin: 0 auto;
+    max-width: 660px;
+  }
+
+  .section__support {
     .section_title {
-      font-family: "Montserrat", sans-serif;
-      font-size: 48px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 70px;
-      letter-spacing: 0em;
-      text-align: center;
-      color: #272d4e;
-      margin-bottom: 69px;
+      margin-bottom: 35px;
     }
   }
+}
+.section__moreinfo {
+  height: 1182px;
+  background-image: url("../assets/images/curve_bg_w_text.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 124px;
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 220px)
+    minmax(500px, 1480px)
+    minmax(1rem, 220px);
 }
 
 .btn__cta {
@@ -144,6 +198,7 @@ export default {
       width: 14px;
       background-size: contain;
       transition: all 0.25s ease;
+      pointer-events: none;
     }
   }
 
