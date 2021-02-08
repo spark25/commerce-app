@@ -59,6 +59,11 @@ export default {};
 .cards_container {
   // grid-column: 2 / 3;
   padding: 0px 126px;
+
+  @include lg {
+    grid-column: 1 !important;
+    padding: 0px;
+  }
   @include sm {
     grid-column: 1 !important;
     padding: 0px;
@@ -67,6 +72,14 @@ export default {};
   .horizontal_card {
     display: flex;
     position: relative;
+
+    @include lg {
+      flex-direction: column;
+      padding: 2rem;
+      justify-items: center;
+      align-content: center;
+      overflow: hidden;
+    }
 
     @include sm {
       flex-direction: column;
@@ -81,6 +94,11 @@ export default {};
       border-radius: 20px;
       position: relative;
       z-index: 9;
+      @include lg {
+        min-width: 430px;
+        height: 548px;
+        align-self: center;
+      }
       @include sm {
         min-width: 350px;
         height: 348px;
@@ -91,6 +109,9 @@ export default {};
         height: 100%;
         width: 100%;
         object-fit: cover;
+        @include lg {
+          object-fit: contain;
+        }
         @include sm {
           object-fit: contain;
         }
@@ -108,6 +129,12 @@ export default {};
         border-radius: 20px;
         z-index: -1;
         filter: blur(25px);
+        @include lg {
+          width: 200px;
+          height: 310px;
+          top: 20px;
+          left: 50%;
+        }
         @include sm {
           width: 200px;
           height: 310px;
@@ -125,6 +152,10 @@ export default {};
       // padding-right: 250px;
       z-index: 5;
 
+      @include lg {
+        padding: 0;
+      }
+
       @include sm {
         padding: 0;
       }
@@ -140,6 +171,10 @@ export default {};
       margin-bottom: 17px;
       z-index: 9;
 
+      @include lg {
+        text-align: center;
+        margin-top: 2rem;
+      }
       @include sm {
         font-size: 28px;
         line-height: 36px;
@@ -158,6 +193,9 @@ export default {};
       margin-bottom: 39px;
       z-index: 9;
 
+      @include lg {
+        text-align: center;
+      }
       @include sm {
         font-size: 16px;
         line-height: 20px;
@@ -187,6 +225,13 @@ export default {};
         height: 472.16px;
         left: -100px;
         top: 417px;
+        @include lg {
+          transform: scale(0.8);
+          left: unset;
+          top: 0;
+          right: 0;
+          z-index: -1;
+        }
         @include sm {
           transform: scale(0.8);
           left: unset;
@@ -220,6 +265,14 @@ export default {};
     &.__community {
       flex-direction: row-reverse;
 
+      @include lg {
+        flex-direction: column-reverse;
+
+        .__image {
+          margin-top: 2rem;
+          padding-bottom: 2rem;
+        }
+      }
       @include sm {
         flex-direction: column-reverse;
 
@@ -230,14 +283,18 @@ export default {};
       }
       .__content {
         padding: 70px 70px 120px 250px;
-        @include sm {
+        @include lg {
           padding: 0;
 
           .__title {
             margin-top: 0;
           }
-          .__desc {
-            // color: #94a2b3;
+        }
+        @include sm {
+          padding: 0;
+
+          .__title {
+            margin-top: 0;
           }
         }
       }
@@ -257,6 +314,11 @@ export default {};
         bottom: 0px;
         // transform: rotate(90deg);
         transform-origin: center;
+        @include lg {
+          right: 0;
+          bottom: 0px;
+          transform: scale(0.8);
+        }
         @include sm {
           right: 0;
           bottom: 0px;
@@ -270,6 +332,11 @@ export default {};
         height: 262px;
         right: -129px;
         bottom: 312px;
+        @include lg {
+          right: 400px;
+          // right: -129px;
+          top: 312px;
+        }
         @include sm {
           right: 400px;
           // right: -129px;

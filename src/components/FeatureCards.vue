@@ -1,5 +1,5 @@
 <template>
-  <div class="feature_card_container">
+  <div class="feature_card_container container">
     <div class="vertical_card __wp">
       <div class="__image">
         <img src="../assets/images/feature1.svg" alt="" srcset="" />
@@ -96,6 +96,22 @@ export default {
 .feature_card_container {
   display: flex;
   justify-content: center;
+  @include lg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-content: center;
+    row-gap: 0;
+  }
+
+  @include md {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: center;
+    row-gap: 4rem;
+  }
+
   @include sm {
     display: grid;
     justify-items: center;
@@ -119,6 +135,9 @@ export default {
       margin-right: 0;
     }
 
+    @include lg {
+      margin-right: 0;
+    }
     @include sm {
       width: calc(100vw - 2rem);
       margin: 0 auto !important;
@@ -207,6 +226,14 @@ export default {
         top: 0;
         left: -101px;
 
+        @include lg {
+          top: -20%;
+          left: 0;
+        }
+        @include md {
+          top: -10%;
+          left: -20%;
+        }
         @include sm {
           width: 155px;
           height: 300px;
@@ -291,6 +318,13 @@ export default {
           left: 0;
           top: 200px;
         }
+      }
+
+      @include lg {
+        grid-column: 1/3;
+      }
+      @include md {
+        grid-column: 1;
       }
     }
   }

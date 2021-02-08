@@ -120,6 +120,13 @@ export default {
       }
     }
 
+    @include lg {
+      display: none;
+    }
+
+    @include md {
+      display: none;
+    }
     @include sm {
       display: none;
     }
@@ -213,15 +220,36 @@ export default {
     }
   }
 
+  @include lg {
+    justify-content: space-between;
+    height: 54px;
+    padding: 37px 24px;
+    .__nav-cta {
+      display: none;
+    }
+    .__ham {
+      display: block;
+    }
+  }
+  @include md {
+    justify-content: space-between;
+    height: 54px;
+    padding: 37px 16px;
+    .__nav-cta {
+      display: none;
+    }
+    .__ham {
+      display: block;
+    }
+  }
+
   @include sm {
     justify-content: space-between;
     height: 54px;
     padding: 37px 16px;
-    // background: oldlace;
     .__nav-cta {
       display: none;
     }
-
     .__ham {
       display: block;
     }

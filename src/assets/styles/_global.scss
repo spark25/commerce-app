@@ -12,7 +12,7 @@ $screen-sm-max: 576px;
 $screen-md-max: 768px;
 
 // Tablets and small desktops
-$screen-lg-max: 992px;
+$screen-lg-max: 1024px;
 
 // Large tablets and desktops
 $screen-xl-max: 1200px;
@@ -61,7 +61,7 @@ $screen-xl-max: 1200px;
   box-sizing: border-box;
 }
 
-// to debug unintended overflows 
+// to debug unintended overflows
 // * {
 //   outline: 1px solid red;
 // }
@@ -76,7 +76,7 @@ body {
   position: relative;
   width: 100%;
 
-  @include sm{
+  @include sm {
     max-width: 100vw;
   }
 }
@@ -173,10 +173,14 @@ nav a {
     border-radius: 60px;
     padding: 26px 62px;
 
-    @include sm {
+    @include lg {
       border-radius: 60px;
       padding: 18px 32px;
       width: 100%;
+    }
+    @include md {
+      font-size: 14px;
+      line-height: 18px;
     }
   }
 
@@ -226,6 +230,10 @@ nav a {
     background: none;
     color: #299ef3;
     transition: all 0.25s ease;
+    @include md {
+      font-size: 14px;
+      line-height: 18px;
+    }
     img {
       opacity: 0;
       transition: all 0.25s ease;

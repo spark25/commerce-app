@@ -63,6 +63,9 @@ export default {
   justify-content: center;
   position: relative;
 
+  @include md {
+    padding-top: 6rem;
+  }
   @include sm {
     padding-top: 6rem;
   }
@@ -104,6 +107,18 @@ export default {
         z-index: -1;
       }
 
+      @include lg {
+        transform: scale(0.8);
+        top: -200px;
+        left: -100px;
+        z-index: 0;
+      }
+      @include md {
+        transform: scale(0.5);
+        top: -40px;
+        left: 0;
+        z-index: 0;
+      }
       @include sm {
         transform: scale(0.5);
         top: -40px;
@@ -127,6 +142,19 @@ export default {
         z-index: -1;
       }
 
+      @include lg {
+        transform: translateY(-50%) scale(0.6);
+        top: 50%;
+        left: -100px;
+        z-index: 0;
+      }
+
+      @include md {
+        transform: translateX(-50%) scale(0.6);
+        top: -75px;
+        left: 50%;
+        z-index: 0;
+      }
       @include sm {
         transform: translateX(-50%) scale(0.6);
         top: -75px;
@@ -150,10 +178,25 @@ export default {
         z-index: -1;
       }
 
+      @include lg {
+        transform: scale(0.8);
+        top: 100%;
+        left: -100px;
+        z-index: 0;
+      }
+      @include md {
+        transform: scale(0.8);
+        top: -10px;
+        left: unset;
+        bottom: unset;
+        right: 0;
+        z-index: 0;
+      }
       @include sm {
         transform: scale(0.8);
         top: -10px;
         left: unset;
+        bottom: unset;
         right: 0;
         z-index: 0;
       }
@@ -174,9 +217,24 @@ export default {
         z-index: -1;
       }
 
+      @include lg {
+        // transform: scale(0.8);
+        top: -150px;
+        left: 100%;
+        z-index: 0;
+      }
+      @include md {
+        // transform: scale(0.8);
+        top: unset;
+        left: unset;
+        bottom: -80%;
+        right: 20px;
+        z-index: 0;
+      }
       @include sm {
         // transform: scale(0.8);
         top: unset;
+        left: unset;
         bottom: -80%;
         right: 20px;
         z-index: 0;
@@ -198,9 +256,26 @@ export default {
         z-index: -1;
       }
 
+      @include lg {
+        transform: translateX(-50%) scale(0.8);
+        top: 120%;
+        bottom: -100%;
+        left: 50%;
+        z-index: 0;
+      }
+
+      @include md {
+        transform: translateX(50%) scale(0.5);
+        top: unset;
+        left: unset;
+        bottom: -100%;
+        right: 50%;
+        z-index: 0;
+      }
       @include sm {
         transform: translateX(50%) scale(0.5);
         top: unset;
+        left: unset;
         bottom: -100%;
         right: 50%;
         z-index: 0;
@@ -215,6 +290,22 @@ export default {
         content: url("../assets/images/t_dp6.svg");
       }
 
+      @include lg {
+        transform: scale(0.8);
+        top: 50%;
+        right: -120px;
+        left: unset;
+        bottom: unset;
+        z-index: 0;
+      }
+      @include md {
+        transform: scale(0.5);
+        top: unset;
+        right: unset;
+        bottom: -80%;
+        left: 20px;
+        z-index: 0;
+      }
       @include sm {
         transform: scale(0.5);
         top: unset;

@@ -149,6 +149,14 @@ export default {};
         color: #ffffff;
       }
 
+      @include lg {
+        display: grid;
+        gap: 20px;
+      }
+      @include md {
+        display: grid;
+        gap: 20px;
+      }
       @include sm {
         display: grid;
         gap: 20px;
@@ -196,13 +204,25 @@ export default {};
         }
       }
 
+      @include md {
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 2rem;
+        .__title {
+          font-size: 16px;
+        }
+        .__link {
+          font-size: 14px !important;
+          line-height: 32px;
+          margin-bottom: 0.8rem;
+        }
+      }
       @include sm {
         grid-template-columns: 1fr 1fr;
         row-gap: 2rem;
-        .__title{
+        .__title {
           font-size: 16px;
         }
-        .__link{
+        .__link {
           font-size: 14px !important;
           line-height: 32px;
           margin-bottom: 0.8rem;
@@ -229,7 +249,7 @@ export default {};
         align-items: center;
         justify-content: center;
 
-        &:last-child{
+        &:last-child {
           margin-right: 0;
         }
       }
@@ -255,10 +275,10 @@ export default {};
       flex-direction: column;
       padding: 1rem;
 
-      .__social{
+      .__social {
         padding-bottom: 1rem;
       }
-      .__cp{
+      .__cp {
         align-self: center;
       }
     }

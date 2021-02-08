@@ -108,6 +108,11 @@ export default {
 .carousel {
   position: relative;
   .carousel__track {
+    @include md {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     @include sm {
       display: flex;
       align-items: center;
@@ -126,6 +131,12 @@ export default {
       width: 730px;
       height: 391px;
       transition: all 0.5s ease;
+      @include md {
+        width: calc(100vw - 4rem);
+        height: 239px;
+        font-size: 18px;
+        line-height: 20px;
+      }
       @include sm {
         width: calc(100vw - 4rem);
         height: 239px;
@@ -144,6 +155,14 @@ export default {
         box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
         padding: 105px 82px 50px 82px;
         z-index: 9;
+        @include md {
+          width: calc(100vw - 4rem);
+          height: 280px;
+          padding: 2rem 1rem 1rem 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
         @include sm {
           width: calc(100vw - 4rem);
           height: 239px;
@@ -163,10 +182,12 @@ export default {
         top: 36px;
         transform: scale(0.95);
         box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
+        // background: red;
+        @include md {
+          top: 75px;
+        }
         @include sm {
-          // bottom: 0;
-          // top: 0;
-          // left: 0;
+          top: 36px;
         }
       }
       &.__next-slide.__next-slide--1 {
@@ -174,6 +195,12 @@ export default {
         top: 76px;
         transform: scale(0.85);
         box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
+        @include md {
+          top: 115px;
+        }
+        @include sm {
+          top: 76px;
+        }
       }
     }
   }
@@ -204,6 +231,10 @@ export default {
     }
     &.__up {
       top: 357px;
+      @include md {
+        top: 150%;
+        right: 50%;
+      }
       @include sm {
         top: 150%;
         right: 50%;
@@ -211,6 +242,10 @@ export default {
     }
     &.__down {
       top: 437px;
+      @include md {
+        top: 150%;
+        left: 50%;
+      }
       @include sm {
         top: 150%;
         left: 50%;
@@ -231,6 +266,12 @@ export default {
       height: 214px;
       left: 385px;
       top: 0;
+      @include md {
+        left: 0;
+        top: -80px;
+        transform: rotate(90deg) scale(0.5);
+        opacity: 0.5;
+      }
       @include sm {
         left: 0;
         top: -80px;
@@ -245,6 +286,13 @@ export default {
       height: 214px;
       right: 380px;
       top: 307px;
+      @include md {
+        background-image: url("../../assets/images/green-dots.svg");
+        transform: rotate(90deg) scale(0.5);
+        right: 50%;
+        top: 100%;
+        opacity: 0.5;
+      }
       @include sm {
         background-image: url("../../assets/images/green-dots.svg");
         transform: rotate(90deg) scale(0.5);

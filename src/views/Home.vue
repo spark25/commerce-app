@@ -96,16 +96,22 @@ export default {
   min-height: 400px;
 
   .section__hero {
-    height: 830px;
     padding-top: 95px;
 
+    @include lg {
+      padding-top: 1rem;
+      // flex-direction: column;
+    }
     @include sm {
-      height: 100vh;
       padding-top: 1rem;
       flex-direction: column;
     }
     .hero_text {
       padding-left: 220px;
+      @include lg {
+        padding: 2rem;
+        padding-right: 0;
+      }
       @include sm {
         padding: 1rem;
       }
@@ -115,6 +121,13 @@ export default {
         line-height: 95px;
         margin-bottom: 30px;
         // max-width: 80%;
+        @include lg {
+          font-size: 52px;
+          line-height: 52px;
+          margin-bottom: 1rem;
+          // text-align: center;
+        }
+
         @include sm {
           font-size: 42px;
           line-height: 42px;
@@ -171,20 +184,31 @@ export default {
       }
     }
     .hero_image {
+      // flex:1;
       background-image: url("../assets/images/featured-image.svg");
       display: block;
       // height: 430px;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
+      @include lg {
+        background-size: contain;
+        background-position: top;
+        min-height: 400px;
+      }
       @include sm {
         background-size: cover;
         background-position: top;
+        min-height: 400px;
       }
     }
   }
 
   .section__feature {
+
+    @include lg{
+      margin-top: 4rem;
+    }
   }
 
   .section_title {
@@ -199,6 +223,7 @@ export default {
     margin-bottom: 69px;
 
     @include sm {
+      margin-bottom: 4rem;
       font-size: 32px;
       line-height: 42px;
     }
@@ -256,9 +281,14 @@ export default {
     rgba(236, 240, 253, 0) 100%
   );
 
+  // @include md {
+  //   padding: 4rem 1rem;
+  //   min-height: 800px;
+  //   margin-bottom: 0px;
+  // }
   @include sm {
     padding: 4rem 1rem;
-    min-height: 100vh;
+    min-height: 800px;
     margin-bottom: 0px;
   }
 }

@@ -31,6 +31,9 @@ export default {};
 
 <style lang="scss">
 .support{
+  @include lg{
+    margin-top: 4rem;
+  }
   @include sm{
     margin-top: 4rem;
   }
@@ -55,6 +58,12 @@ export default {};
   padding: 75px 345px;
   justify-content: space-around;
   position: relative;
+  @include lg {
+    padding: 75px 2rem;
+    display: grid !important;
+    row-gap: 2rem;
+    place-items: center;
+  }
   @include sm {
     padding: 75px 2rem;
     display: grid !important;
@@ -70,6 +79,11 @@ export default {};
     line-height: 52px;
     color: #ffffff;
 
+    @include lg {
+      font-size: 22px;
+      line-height: 32px;
+      text-align: center;
+    }
     @include sm {
       font-size: 22px;
       line-height: 32px;
@@ -98,6 +112,10 @@ export default {};
     height: 88px;
     right: 144px;
     top: 194px;
+    @include lg {
+      right: 1rem;
+      top: 90%;
+    }
     @include sm {
       right: 1rem;
       top: 90%;
@@ -109,6 +127,10 @@ export default {};
     height: 34px;
     left: 194px;
     top: -62px;
+    @include lg {
+      left: 50%;
+      top: 0;
+    }
     @include sm {
       left: 50%;
       top: 0;
@@ -121,6 +143,10 @@ export default {};
     height: 61.18px;
     left: 100px;
     top: -148px;
+    @include lg {
+      left: 50%;
+      bottom: 100%;
+    }
     @include sm {
       left: 50%;
       bottom: 100%;
@@ -132,6 +158,10 @@ export default {};
     height: 43px;
     right: 263px;
     top: -215px;
+    @include lg {
+      left: 10px;
+      top: -90%;
+    }
     @include sm {
       left: 10px;
       top: -90%;
@@ -146,6 +176,12 @@ export default {};
     height: 214px;
     right: 144px;
     bottom: 195px;
+    @include lg {
+      right: -100px;
+      top: 30px;
+      z-index: -1;
+      transform: rotate(90deg) scale(0.8);
+    }
     @include sm {
       right: -100px;
       top: 30px;
@@ -160,6 +196,12 @@ export default {};
     width: 265.44px;
     left: 83px;
     bottom: 137px;
+    @include lg {
+      left: -50px;
+      top: -70px;
+      z-index: -1;
+      transform: rotate(90deg) scale(0.8);
+    }
     @include sm {
       left: -50px;
       top: -70px;
