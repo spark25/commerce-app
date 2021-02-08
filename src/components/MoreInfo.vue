@@ -401,7 +401,6 @@ export default {};
         height: 472.16px;
         right: -50px;
         bottom: 0px;
-        // transform: rotate(90deg);
         transform-origin: center;
         @include sl {
           opacity: 0.8;
@@ -436,22 +435,18 @@ export default {};
 
         @include sl {
           right: 500px;
-          // right: -129px;
           top: 312px;
         }
         @include lg {
           right: 500px;
-          // right: -129px;
           top: 312px;
         }
         @include md {
           right: 300px;
-          // right: -129px;
           top: 312px;
         }
         @include sm {
           right: 300px;
-          // right: -129px;
           top: 312px;
         }
       }
