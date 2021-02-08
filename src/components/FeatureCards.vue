@@ -96,6 +96,12 @@ export default {
 .feature_card_container {
   display: flex;
   justify-content: center;
+  @include sm {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    row-gap: 4rem;
+  }
 
   .vertical_card {
     display: flex;
@@ -113,6 +119,12 @@ export default {
       margin-right: 0;
     }
 
+    @include sm {
+      width: calc(100vw - 2rem);
+      margin: 0 auto !important;
+      margin-top: 74px !important;
+    }
+
     .__image {
       width: 430px;
       height: 293px;
@@ -121,6 +133,10 @@ export default {
       margin-bottom: 40px;
       overflow: hidden;
       position: relative;
+      @include sm {
+        width: 350px;
+        align-self: center;
+      }
 
       img {
         width: 100%;
@@ -143,6 +159,12 @@ export default {
       text-align: left;
       color: #272d4e;
       margin-bottom: 5px;
+
+      @include sm {
+        font-size: 28px;
+        line-height: 36px;
+        text-align: center;
+      }
     }
 
     .__desc {
@@ -155,9 +177,20 @@ export default {
       text-align: left;
       color: #94a2b3;
       margin-bottom: 25px;
+      @include sm {
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+      }
     }
 
     .__actions {
+      .btn__cta {
+        @include sm {
+          text-align: center;
+          justify-content: center;
+        }
+      }
     }
 
     .feature_image {
@@ -173,6 +206,13 @@ export default {
       .feature_image.__apple-pay {
         top: 0;
         left: -101px;
+
+        @include sm {
+          width: 155px;
+          height: 300px;
+          top: 0;
+          left: 0;
+        }
       }
     }
 
@@ -193,6 +233,10 @@ export default {
         height: 69.32px;
         left: 48px;
         top: 112px;
+        @include sm {
+          left: 0;
+          top: 112px;
+        }
       }
 
       .__jetpack {
@@ -200,6 +244,10 @@ export default {
         height: 69.32px;
         top: 134px;
         right: 96px;
+        @include sm {
+          right: 0;
+          top: 112px;
+        }
       }
 
       .__google-ads {
@@ -239,6 +287,10 @@ export default {
         height: 116px;
         left: 352px;
         top: 115px;
+        @include sm {
+          left: 0;
+          top: 200px;
+        }
       }
     }
   }

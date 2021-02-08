@@ -1,5 +1,5 @@
 <template>
-  <div class="cards_container">
+  <div class="cards_container container">
     <div class="horizontal_card __develop">
       <div class="__image">
         <img src="../assets/images/develop_w_limits.svg" alt="" />
@@ -13,7 +13,7 @@
           a single product to a WordPress site—your store, your way.
         </div>
         <div class="__cta">
-          <button class="btn btn__cta success small d_flex align_center">
+          <button class="btn btn__cta success small d_flex place_center">
             <span class="btn_text">Read the Documentation</span>
           </button>
         </div>
@@ -24,6 +24,7 @@
       <div class="__ellipse __ellipse1"></div>
       <div class="__ellipse __ellipse2"></div>
     </div>
+
     <div class="horizontal_card __community">
       <div class="__image">
         <img src="../assets/images/our_community.svg" alt="" />
@@ -37,7 +38,7 @@
           80+ meetups worldwide!
         </div>
         <div class="__cta">
-          <button class="btn btn__cta success small d_flex align_center">
+          <button class="btn btn__cta success small d_flex place_center">
             <span class="btn_text">Read the Documentation</span>
           </button>
         </div>
@@ -56,27 +57,43 @@ export default {};
 
 <style lang="scss">
 .cards_container {
-  grid-column: 2 / 3;
+  // grid-column: 2 / 3;
   padding: 0px 126px;
-  //   background: #bada55;
-  //   display: grid;
+  @include sm {
+    grid-column: 1 !important;
+    padding: 0px;
+  }
 
   .horizontal_card {
     display: flex;
     position: relative;
+
+    @include sm {
+      flex-direction: column;
+      padding: 2rem;
+      justify-items: center;
+      align-content: center;
+      overflow: hidden;
+    }
     .__image {
       min-width: 430px;
       height: 548px;
-      box-shadow: -25px 20px 44px rgba(84, 48, 209, 0.4);
-      box-shadow: -25px 20px 44px 0px #5430d1 40%;
       border-radius: 20px;
       position: relative;
       z-index: 9;
+      @include sm {
+        min-width: 350px;
+        height: 348px;
+        align-self: center;
+      }
       // overflow: hidden;
       img {
         height: 100%;
         width: 100%;
         object-fit: cover;
+        @include sm {
+          object-fit: contain;
+        }
       }
 
       &::after {
@@ -91,6 +108,12 @@ export default {};
         border-radius: 20px;
         z-index: -1;
         filter: blur(25px);
+        @include sm {
+          width: 200px;
+          height: 310px;
+          top: 20px;
+          left: 50%;
+        }
       }
     }
 
@@ -98,7 +121,13 @@ export default {};
       flex-direction: column;
       justify-content: center;
       padding: 120px 250px 70px 70px;
+      position: relative;
       // padding-right: 250px;
+      z-index: 5;
+
+      @include sm {
+        padding: 0;
+      }
     }
 
     .__title {
@@ -109,6 +138,14 @@ export default {};
       line-height: 44px;
       color: #ffffff;
       margin-bottom: 17px;
+      z-index: 9;
+
+      @include sm {
+        font-size: 28px;
+        line-height: 36px;
+        text-align: center;
+        margin-top: 2rem;
+      }
     }
 
     .__desc {
@@ -117,10 +154,15 @@ export default {};
       font-weight: normal;
       font-size: 18px;
       line-height: 30px;
-      /* or 167% */
-
       color: #ffffff;
       margin-bottom: 39px;
+      z-index: 9;
+
+      @include sm {
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+      }
     }
 
     .__matrix,
@@ -129,6 +171,7 @@ export default {};
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+      // z-index: -1;
     }
     &.__develop {
       margin-bottom: 55px;
@@ -144,6 +187,12 @@ export default {};
         height: 472.16px;
         left: -100px;
         top: 417px;
+        @include sm {
+          left: unset;
+          top: 0;
+          right: 2rem;
+          z-index: -1;
+        }
       }
 
       .__ellipse1 {
@@ -152,6 +201,11 @@ export default {};
         height: 401px;
         left: -108px;
         top: 213px;
+        @include sm {
+          left: -108px;
+          top: 0;
+          // z-index: -1;
+        }
       }
       .__ellipse2 {
         background-image: url("../assets/images/Ellipse36.svg");
@@ -164,8 +218,27 @@ export default {};
 
     &.__community {
       flex-direction: row-reverse;
+
+      @include sm {
+        flex-direction: column-reverse;
+
+        .__image {
+          margin-top: 2rem;
+          padding-bottom: 2rem;
+        }
+      }
       .__content {
         padding: 70px 70px 120px 250px;
+        @include sm {
+          padding: 0;
+
+          .__title {
+            margin-top: 0;
+          }
+          .__desc {
+            // color: #94a2b3;
+          }
+        }
       }
 
       .__image {
@@ -183,6 +256,10 @@ export default {};
         bottom: 0px;
         transform: rotate(90deg);
         transform-origin: center;
+        @include sm {
+          right: 4rem;
+          bottom: 0px;
+        }
       }
 
       .__ellipse1 {
@@ -191,6 +268,11 @@ export default {};
         height: 262px;
         right: -129px;
         bottom: 312px;
+        @include sm {
+          right: 400px;
+          // right: -129px;
+          top: 312px;
+        }
       }
       .__ellipse2 {
         background-image: url("../assets/images/Ellipse36.svg");
@@ -199,6 +281,10 @@ export default {};
         right: 273px;
         bottom: 531px;
         z-index: 9;
+        @include sm {
+          left: 0;
+          top: 0;
+        }
       }
     }
   }

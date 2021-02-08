@@ -1,23 +1,29 @@
 <template>
   <div class="carousel">
-    <div class="carousel__track">
-      <!-- Active slides  -->
-      <div class="carousel__slide __active-slide" :key="'first'">
-        {{ activeSlide.length > 0 ? activeSlide[0].text : "" }}
-      </div>
+    <div class="carousel__track-container">
+      <ul class="carousel__track">
+        <!-- Active slides  -->
 
-      <!-- Next slides  -->
-      <div
-        class="carousel__slide __next-slide"
-        :class="`__next-slide--` + i"
-        v-for="(slide, i) in nextQueue"
-        :key="i"
-      >
-        {{ slide.text }}
-      </div>
+        <li class="carousel__slide __active-slide" :key="'first'">
+          {{ activeSlide.length > 0 ? activeSlide[0].text : "" }}
+        </li>
+
+        <!-- Next slides  -->
+        <li
+          class="carousel__slide __next-slide"
+          :class="`__next-slide--` + i"
+          v-for="(slide, i) in nextQueue"
+          :key="i"
+        >
+          {{ slide.text }}
+        </li>
+
+        <!-- <slot name="slides"> -->
+        <!-- slides in following form will be injected from parent-->
+        <!-- <li class="carousel__slide"></li> -->
+        <!-- </slot> -->
+      </ul>
     </div>
-
-    <!-- slide controls  -->
     <button
       :disabled="nextQueue.length <= 0"
       class="icon carousel__btn __up"
@@ -58,6 +64,7 @@
         />
       </svg>
     </button>
+
     <!-- elements  -->
     <!-- matrix dots  -->
     <div class="_matrix _matrix__right"></div>
@@ -107,83 +114,96 @@ export default {
 <style lang="scss">
 .carousel {
   position: relative;
-  .carousel__track {
-    @include sm {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .carousel__slide {
-      border-radius: 20px;
-      font-family: "Montserrat";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 26.7px;
-      line-height: 39px;
-      text-align: center;
-      color: #94a2b3;
-      background: #ffffff;
-      width: 730px;
-      height: 391px;
-      transition: all 0.5s ease;
+  width: 730px;
+  min-height: 439px;
+  margin: 0 auto;
+  
+
+  @include sm {
+    // width: 430px;
+    // height: 239px;
+  }
+  .carousel__track-container {
+    position: relative;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    .carousel__track {
+      padding: 0;
+      margin: 0;
+      list-style: none;
       @include sm {
-        width: calc(100vw - 4rem);
-        height: 239px;
-        font-size: 18px;
-        line-height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      &.__active-slide {
-        top: 0;
-        // left: 0;
+      .carousel__slide {
+        position: absolute;
+        border-radius: 20px;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 26.7px;
+        line-height: 39px;
+        text-align: center;
+        color: #94a2b3;
+        background: #ffffff;
         width: 730px;
         height: 391px;
-        position: relative;
-        background-image: url("../../assets/icons/quotes.svg");
-        background-repeat: no-repeat;
-        background-position: top 28px center;
-        box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
-        padding: 105px 82px 50px 82px;
-        z-index: 9;
+        transition: all 0.5s ease;
         @include sm {
-          width: calc(100vw - 4rem);
+          width: calc(100vw - 2rem);
           height: 239px;
-          padding: 2rem 1rem 1rem 1rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          font-size: 18px;
+          line-height: 20px;
         }
-      }
-
-      &.__next-slide {
-        position: absolute;
-      }
-
-      &.__next-slide.__next-slide--0 {
-        z-index: 5;
-        top: 36px;
-        transform: scale(0.95);
-        box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
-        @include sm {
-          // bottom: 0;
-          // top: 0;
+        &.__active-slide {
+          top: 0;
           // left: 0;
+          width: 730px;
+          height: 391px;
+
+          background-image: url("../../assets/icons/quotes.svg");
+          background-repeat: no-repeat;
+          background-position: top 28px center;
+          box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
+          padding: 105px 82px 50px 82px;
+          z-index: 9;
+          @include sm {
+            width: calc(100vw - 2rem);
+            height: 239px;
+            padding: 2rem 1rem 1rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
         }
-      }
-      &.__next-slide.__next-slide--1 {
-        z-index: 1;
-        top: 76px;
-        transform: scale(0.85);
-        box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
+
+        &.__next-slide.__next-slide--0 {
+          z-index: 5;
+          top: 36px;
+          transform: scale(0.95);
+          box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
+          @include sm {
+            // bottom: 0;
+            // top: 0;
+            // left: 0;
+          }
+        }
+        &.__next-slide.__next-slide--1 {
+          z-index: 1;
+          top: 76px;
+          transform: scale(0.85);
+          box-shadow: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
+        }
       }
     }
   }
-
   .carousel__btn {
     position: absolute;
     right: -59px;
     transform: scale(1);
     transition: all 0.2s ease;
-    z-index: 9;
     svg {
       path {
         fill: black;
@@ -205,14 +225,14 @@ export default {
     &.__up {
       top: 357px;
       @include sm {
-        top: 150%;
+        top: 80%;
         right: 50%;
       }
     }
     &.__down {
       top: 437px;
       @include sm {
-        top: 150%;
+        top: 80%;
         left: 50%;
       }
     }
@@ -231,12 +251,6 @@ export default {
       height: 214px;
       left: 385px;
       top: 0;
-      @include sm {
-        left: 0;
-        top: -80px;
-        transform: rotate(90deg) scale(0.5);
-        opacity: 0.5;
-      }
     }
 
     &._matrix__left {
@@ -245,13 +259,6 @@ export default {
       height: 214px;
       right: 380px;
       top: 307px;
-      @include sm {
-        background-image: url("../../assets/images/green-dots.svg");
-        transform: rotate(90deg) scale(0.5);
-        right: 50%;
-        top: 100%;
-        opacity: 0.5;
-      }
     }
   }
 }

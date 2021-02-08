@@ -1,23 +1,7 @@
 <template>
-  <div class="testimonial__container">
+  <div class="testimonial__container container">
     <slider :slides="testimonials">
-      <!-- <template v-slot:slides>
-        <li class="carousel__slide">
-          No other eCommerce platform allows people to start for free and grow
-          their store as their business grows. More importantly, Commerce
-          doesn't charge you a portion of your profits as your business grows!
-        </li>
-        <li class="carousel__slide">
-          No other eCommerce platform allows people to start for free and grow
-          their store as their business grows. More importantly, Commerce
-          doesn't charge you a portion of your profits as your business grows!
-        </li>
-        <li class="carousel__slide">
-          No other eCommerce platform allows people to start for free and grow
-          their store as their business grows. More importantly, Commerce
-          doesn't charge you a portion of your profits as your business grows!
-        </li>
-      </template> -->
+      <!-- slides go here  -->
     </slider>
 
     <!-- elements  -->
@@ -74,15 +58,23 @@ export default {
 <style lang="scss">
 .testimonial__container {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+
+  @include sm {
+    padding-top: 6rem;
+  }
 
   ._people {
     position: absolute;
     z-index: 9;
     display: block;
+
+    @include sm {
+      // position: relative;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -90,7 +82,6 @@ export default {
 
     &::after {
       position: absolute;
-
       top: 10px;
       left: 0;
       filter: blur(16px);
@@ -112,6 +103,13 @@ export default {
         filter: blur(16px);
         z-index: -1;
       }
+
+      @include sm {
+        transform: scale(0.5);
+        top: -40px;
+        left: 0;
+        z-index: 0;
+      }
     }
     &._people-2 {
       width: 105px;
@@ -127,6 +125,13 @@ export default {
         left: 0;
         filter: blur(16px);
         z-index: -1;
+      }
+
+      @include sm {
+        transform: translateX(-50%) scale(0.6);
+        top: -75px;
+        left: 50%;
+        z-index: 0;
       }
     }
     &._people-3 {
@@ -144,6 +149,14 @@ export default {
         filter: blur(16px);
         z-index: -1;
       }
+
+      @include sm {
+        transform: scale(0.8);
+        top: -10px;
+        left: unset;
+        right: 0;
+        z-index: 0;
+      }
     }
     &._people-4 {
       width: 95px;
@@ -159,6 +172,14 @@ export default {
         left: 0;
         filter: blur(16px);
         z-index: -1;
+      }
+
+      @include sm {
+        // transform: scale(0.8);
+        top: unset;
+        bottom: -80%;
+        right: 20px;
+        z-index: 0;
       }
     }
     &._people-5 {
@@ -176,6 +197,14 @@ export default {
         filter: blur(16px);
         z-index: -1;
       }
+
+      @include sm {
+        transform: translateX(50%) scale(0.5);
+        top: unset;
+        bottom: -100%;
+        right: 50%;
+        z-index: 0;
+      }
     }
     &._people-6 {
       width: 105px;
@@ -184,6 +213,15 @@ export default {
       right: -206px;
       &::after {
         content: url("../assets/images/t_dp6.svg");
+      }
+
+      @include sm {
+        transform: scale(0.5);
+        top: unset;
+        bottom: -80%;
+        right: unset;
+        left: 20px;
+        z-index: 0;
       }
     }
   }

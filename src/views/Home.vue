@@ -47,7 +47,7 @@
       <div class="section_title">
         Trusted by Agencies<br />&amp; Store Owners
       </div>
-      <testimonial  />
+      <testimonial />
     </section>
 
     <!-- support/people section  -->
@@ -80,9 +80,7 @@ export default {
   },
 
   data() {
-    return {
- 
-    };
+    return {};
   },
 };
 </script>
@@ -100,15 +98,29 @@ export default {
   .section__hero {
     height: 830px;
     padding-top: 95px;
+
+    @include sm {
+      height: 100vh;
+      padding-top: 1rem;
+      flex-direction: column;
+    }
     .hero_text {
       padding-left: 220px;
+      @include sm {
+        padding: 1rem;
+      }
       .hero_title {
         color: #272d4e;
         font-size: 85px;
         line-height: 95px;
-        justify-self: end;
         margin-bottom: 30px;
-        white-space: pre-line;
+        // max-width: 80%;
+        @include sm {
+          font-size: 42px;
+          line-height: 42px;
+          margin-bottom: 1rem;
+          // text-align: center;
+        }
       }
 
       .hero_subtitle {
@@ -120,14 +132,26 @@ export default {
         letter-spacing: 0em;
         text-align: left;
         color: #94a2b3;
-        white-space: pre-line;
+        @include sm {
+          font-size: 16px;
+          line-height: 18px;
+          // text-align: center;
+        }
       }
 
       .cta_group {
         margin-top: 30px;
+        @include sm {
+          margin-top: 2rem;
+          flex-direction: column;
+        }
 
         .primary {
           margin-right: 12px;
+          @include sm {
+            width: 100%;
+            margin-right: 0px;
+          }
         }
 
         .light {
@@ -136,6 +160,13 @@ export default {
 
         .text {
           margin-left: 12px;
+          justify-content: center;
+          @include sm {
+            margin-bottom: 0.5rem;
+          }
+        }
+        .hero_subtitle {
+          padding: 0.5rem 0;
         }
       }
     }
@@ -146,6 +177,10 @@ export default {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center center;
+      @include sm {
+        background-size: cover;
+        background-position: top;
+      }
     }
   }
 
@@ -162,6 +197,11 @@ export default {
     text-align: center;
     color: #272d4e;
     margin-bottom: 69px;
+
+    @include sm {
+      font-size: 32px;
+      line-height: 42px;
+    }
   }
 
   .section_subtitle {
@@ -178,30 +218,34 @@ export default {
   }
 
   .section__support {
+    @include sm {
+      margin-top: 6rem;
+    }
     .section_title {
       margin-bottom: 35px;
     }
   }
 }
 .section__moreinfo {
-  height: 1182px;
+  min-height: 1182px;
   background-image: url("../assets/images/curve_bg_w_text.svg");
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 124px;
   display: grid;
-  grid-template-columns:
-    minmax(1rem, 220px)
-    minmax(500px, 1480px)
-    minmax(1rem, 220px);
+
+  @include sm {
+    min-height: max-content;
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .section__testimonials {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 206px 220px;
+  padding: 206px 0px;
+  margin-bottom: 167px;
   background: linear-gradient(
     180deg,
     rgba(236, 240, 253, 0) 0%,
@@ -210,6 +254,12 @@ export default {
     rgba(236, 240, 253, 0.43) 84.33%,
     rgba(236, 240, 253, 0) 100%
   );
+
+  @include sm {
+    padding: 4rem 1rem;
+    min-height: 100vh;
+    margin-bottom: 0px;
+  }
 }
 
 .btn__cta {

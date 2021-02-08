@@ -13,26 +13,14 @@
       </button>
 
       <!-- Elements  -->
-      <div class="_ellipse _ellipse__1">
-        <!-- <img src="../assets/images/Ellipse.svg" alt="" /> -->
-      </div>
-      <div class="_ellipse _ellipse__2">
-        <!-- <img src="../assets/images/Ellipse.svg" alt="" /> -->
-      </div>
-      <div class="_ellipse _ellipse__3">
-        <!-- <img src="../assets/images/Ellipse.svg" alt="" /> -->
-      </div>
-      <div class="_ellipse _ellipse__4">
-        <!-- <img src="../assets/images/Ellipse.svg" alt="" /> -->
-      </div>
+      <div class="_ellipse _ellipse__1"></div>
+      <div class="_ellipse _ellipse__2"></div>
+      <div class="_ellipse _ellipse__3"></div>
+      <div class="_ellipse _ellipse__4"></div>
 
       <!-- matrix dots  -->
-      <div class="_matrix _matrix__right">
-        <!-- <img src="../assets/images/Ellipse.svg" alt="" /> -->
-      </div>
-      <div class="_matrix _matrix__left">
-        <!-- <img src="../assets/images/Ellipse.svg" alt="" /> -->
-      </div>
+      <div class="_matrix _matrix__right"></div>
+      <div class="_matrix _matrix__left"></div>
     </div>
   </div>
 </template>
@@ -42,6 +30,11 @@ export default {};
 </script>
 
 <style lang="scss">
+.support{
+  @include sm{
+    margin-top: 4rem;
+  }
+}
 .support_image {
   background-image: url("../assets/images/white_ellipse.svg");
   background-repeat: no-repeat;
@@ -49,6 +42,7 @@ export default {};
   // background-size: cover;
   margin-top: 16px;
   // padding: 0px 304px;
+  z-index: 9;
 
   img {
     object-fit: contain;
@@ -61,6 +55,12 @@ export default {};
   padding: 75px 345px;
   justify-content: space-around;
   position: relative;
+  @include sm {
+    padding: 75px 2rem;
+    display: grid !important;
+    row-gap: 2rem;
+    place-items: center;
+  }
 
   .__msg {
     font-family: "Roboto";
@@ -69,7 +69,14 @@ export default {};
     font-size: 36px;
     line-height: 52px;
     color: #ffffff;
+
+    @include sm {
+      font-size: 22px;
+      line-height: 32px;
+      text-align: center;
+    }
   }
+
   background: #5f37ef;
 
   ._ellipse,
@@ -91,6 +98,10 @@ export default {};
     height: 88px;
     right: 144px;
     top: 194px;
+    @include sm {
+      right: 1rem;
+      top: 90%;
+    }
   }
   ._ellipse__2 {
     background-image: url("../assets/images/Ellipse-sm.svg");
@@ -98,6 +109,10 @@ export default {};
     height: 34px;
     left: 194px;
     top: -62px;
+    @include sm {
+      left: 50%;
+      top: 0;
+    }
   }
 
   ._ellipse__3 {
@@ -106,6 +121,10 @@ export default {};
     height: 61.18px;
     left: 100px;
     top: -148px;
+    @include sm {
+      left: 50%;
+      bottom: 100%;
+    }
   }
   ._ellipse__4 {
     background-image: url("../assets/images/Ellipse34.svg");
@@ -113,6 +132,10 @@ export default {};
     height: 43px;
     right: 263px;
     top: -215px;
+    @include sm {
+      left: 10px;
+      top: -90%;
+    }
   }
   ._matrix {
     z-index: -1;
@@ -123,6 +146,12 @@ export default {};
     height: 214px;
     right: 144px;
     bottom: 195px;
+    @include sm {
+      right: -100px;
+      top: 30px;
+      z-index: -1;
+      transform: rotate(90deg);
+    }
   }
 
   ._matrix__left {
@@ -131,6 +160,12 @@ export default {};
     width: 265.44px;
     left: 83px;
     bottom: 137px;
+    @include sm {
+      left: -50px;
+      top: -70px;
+      z-index: -1;
+      transform: rotate(90deg);
+    }
   }
 }
 </style>

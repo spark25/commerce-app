@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="footer_content">
+    <div class="footer_content container">
       <div class="about_safety d_flex align_center">
         <div class="d_flex align_center">
           <span class="__icon"
@@ -97,7 +97,7 @@
       </div>
     </div>
     <div class="social_links">
-      <ul class="__social d-flex align-center">
+      <ul class="__social d-flex align-center justify_space_between">
         <li class="__link">
           <img src="../../assets/icons/twitter.svg" alt="twitter" />
         </li>
@@ -110,32 +110,26 @@
         <li class="__link">
           <img src="../../assets/icons/ig.svg" alt="instagram" />
         </li>
-        <li class="__link">
-          COPYRIGHT COMMERCE 2020 - TERMS &amp; CONDITIONS PRIVACY POLICY
-        </li>
       </ul>
+      <span class="__cp">
+        COPYRIGHT COMMERCE 2020 - TERMS &amp; CONDITIONS PRIVACY POLICY
+      </span>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-};
+export default {};
 </script>
 
 <style lang="scss">
 .footer {
   display: grid;
-  grid-template-columns:
-    minmax(1rem, 220px)
-    minmax(auto, 1480px)
-    minmax(1rem, 220px);
-
+  flex-direction: column;
   background: #7854f7;
 
   .footer_content {
-    grid-column: 2/3;
-
+    width: 100%;
     .about_safety {
       justify-content: space-around;
       padding: 45px 0px;
@@ -153,6 +147,11 @@ export default {
         /* identical to box height, or 262% */
 
         color: #ffffff;
+      }
+
+      @include sm {
+        display: grid;
+        gap: 20px;
       }
     }
 
@@ -196,11 +195,26 @@ export default {
           }
         }
       }
+
+      @include sm {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 2rem;
+        .__title{
+          font-size: 16px;
+        }
+        .__link{
+          font-size: 14px !important;
+          line-height: 32px;
+          margin-bottom: 0.8rem;
+        }
+      }
     }
   }
 
   .social_links {
-    grid-column: 1/4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: #fff;
     padding: 21px 220px;
     .__social {
@@ -215,17 +229,37 @@ export default {
         align-items: center;
         justify-content: center;
 
-        &:last-child {
-          margin-left: auto;
-          margin-right: 0px;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 12px;
-          line-height: 22px;
-          text-align: center;
-          color: #272d4e;
-           cursor: unset;
+        &:last-child{
+          margin-right: 0;
         }
+      }
+    }
+    .__cp {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 22px;
+      text-align: center;
+      color: #272d4e;
+      cursor: unset;
+    }
+  }
+
+  @include sm {
+    display: grid;
+    grid-template-columns: 1fr;
+    .social_links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+
+      .__social{
+        padding-bottom: 1rem;
+      }
+      .__cp{
+        align-self: center;
       }
     }
   }
