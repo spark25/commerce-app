@@ -100,6 +100,11 @@ export default {};
         height: 548px;
         align-self: center;
       }
+      @include md {
+        min-width: 350px;
+        height: 348px;
+        align-self: center;
+      }
       @include sm {
         min-width: 350px;
         height: 348px;
@@ -114,6 +119,9 @@ export default {};
           object-fit: contain;
         }
         @include lg {
+          object-fit: contain;
+        }
+        @include md {
           object-fit: contain;
         }
         @include sm {
@@ -145,6 +153,13 @@ export default {};
           top: 20px;
           left: 50%;
         }
+        @include md {
+          width: 200px;
+          height: 310px;
+          top: 20px;
+          left: 50%;
+          filter: blur(16px);
+        }
         @include sm {
           width: 200px;
           height: 310px;
@@ -174,6 +189,10 @@ export default {};
         align-self: flex-end;
       }
 
+      @include md {
+        padding: 0;
+        padding: 0 1rem;
+      }
       @include sm {
         padding: 0;
         padding: 0 1rem;
@@ -193,6 +212,12 @@ export default {};
       @include lg {
         // text-align: center;
         // margin-top: 2rem;
+      }
+      @include md {
+        font-size: 28px;
+        line-height: 36px;
+        text-align: center;
+        margin-top: 2rem;
       }
       @include sm {
         font-size: 28px;
@@ -214,6 +239,11 @@ export default {};
 
       @include lg {
         // text-align: center;
+      }
+      @include md {
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
       }
       @include sm {
         font-size: 16px;
@@ -259,6 +289,13 @@ export default {};
           right: 20px;
           z-index: -1;
         }
+        @include md {
+          transform: scale(0.8);
+          left: unset;
+          top: 0;
+          right: 0;
+          z-index: -1;
+        }
         @include sm {
           transform: scale(0.8);
           left: unset;
@@ -274,6 +311,11 @@ export default {};
         height: 401px;
         left: -108px;
         top: 213px;
+        @include md {
+          left: -108px;
+          top: 0;
+          // z-index: -1;
+        }
         @include sm {
           left: -108px;
           top: 0;
@@ -292,13 +334,13 @@ export default {};
     &.__community {
       flex-direction: row-reverse;
 
-      @include lg {
-        // flex-direction: column-reverse;
+      @include md {
+        flex-direction: column-reverse;
 
-        // .__image {
-        //   margin-top: 2rem;
-        //   padding-bottom: 2rem;
-        // }
+        .__image {
+          margin-top: 2rem;
+          padding-bottom: 2rem;
+        }
       }
       @include sm {
         flex-direction: column-reverse;
@@ -323,6 +365,14 @@ export default {};
           padding: 0;
           padding: 0 2rem;
           align-self: unset;
+
+          .__title {
+            margin-top: 0;
+          }
+        }
+        @include md {
+          padding: 0;
+          padding: 0 1rem;
 
           .__title {
             margin-top: 0;
@@ -365,6 +415,11 @@ export default {};
           right: 300px;
           bottom: -100px;
         }
+        @include md {
+          right: 0;
+          bottom: 0px;
+          transform: scale(0.8);
+        }
         @include sm {
           right: 0;
           bottom: 0px;
@@ -389,6 +444,11 @@ export default {};
           // right: -129px;
           top: 312px;
         }
+        @include md {
+          right: 300px;
+          // right: -129px;
+          top: 312px;
+        }
         @include sm {
           right: 300px;
           // right: -129px;
@@ -402,6 +462,10 @@ export default {};
         right: 273px;
         bottom: 531px;
         z-index: 9;
+        @include md {
+          left: 0;
+          top: 0;
+        }
         @include sm {
           left: 0;
           top: 0;
