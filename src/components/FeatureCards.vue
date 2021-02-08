@@ -96,6 +96,13 @@ export default {
 .feature_card_container {
   display: flex;
   justify-content: center;
+  @include sl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-content: center;
+    row-gap: 0;
+  }
   @include lg {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -135,6 +142,9 @@ export default {
       margin-right: 0;
     }
 
+    @include sl {
+      margin-right: 0;
+    }
     @include lg {
       margin-right: 0;
     }
@@ -226,6 +236,10 @@ export default {
         top: 0;
         left: -101px;
 
+        @include sl {
+          top: -20%;
+          left: 0;
+        }
         @include lg {
           top: -20%;
           left: 0;
@@ -320,6 +334,9 @@ export default {
         }
       }
 
+      @include sl {
+        grid-column: 1/3;
+      }
       @include lg {
         grid-column: 1/3;
       }

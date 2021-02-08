@@ -30,11 +30,14 @@ export default {};
 </script>
 
 <style lang="scss">
-.support{
-  @include lg{
+.support {
+  @include sl {
     margin-top: 4rem;
   }
-  @include sm{
+  @include lg {
+    margin-top: 4rem;
+  }
+  @include sm {
     margin-top: 4rem;
   }
 }
@@ -42,10 +45,9 @@ export default {};
   background-image: url("../assets/images/white_ellipse.svg");
   background-repeat: no-repeat;
   background-position: top -110% right 50%;
-  // background-size: cover;
   margin-top: 16px;
-  // padding: 0px 304px;
   z-index: 9;
+  position: relative;
 
   img {
     object-fit: contain;
@@ -58,6 +60,12 @@ export default {};
   padding: 75px 345px;
   justify-content: space-around;
   position: relative;
+  @include sl {
+    padding: 75px 2rem;
+    display: grid !important;
+    row-gap: 2rem;
+    place-items: center;
+  }
   @include lg {
     padding: 75px 2rem;
     display: grid !important;
@@ -112,6 +120,10 @@ export default {};
     height: 88px;
     right: 144px;
     top: 194px;
+    @include sl {
+      right: 1rem;
+      top: 90%;
+    }
     @include lg {
       right: 1rem;
       top: 90%;
@@ -127,6 +139,10 @@ export default {};
     height: 34px;
     left: 194px;
     top: -62px;
+    @include sl {
+      left: 50%;
+      top: 0;
+    }
     @include lg {
       left: 50%;
       top: 0;
@@ -143,6 +159,10 @@ export default {};
     height: 61.18px;
     left: 100px;
     top: -148px;
+    @include sl {
+      left: 50%;
+      bottom: 100%;
+    }
     @include lg {
       left: 50%;
       bottom: 100%;
@@ -158,6 +178,10 @@ export default {};
     height: 43px;
     right: 263px;
     top: -215px;
+    @include sl {
+      left: 10px;
+      top: -90%;
+    }
     @include lg {
       left: 10px;
       top: -90%;
@@ -176,6 +200,12 @@ export default {};
     height: 214px;
     right: 144px;
     bottom: 195px;
+    @include sl {
+      right: -100px;
+      top: 30px;
+      z-index: -1;
+      transform: rotate(90deg) scale(0.8);
+    }
     @include lg {
       right: -100px;
       top: 30px;
@@ -196,6 +226,12 @@ export default {};
     width: 265.44px;
     left: 83px;
     bottom: 137px;
+    @include sl {
+      left: -50px;
+      top: -70px;
+      z-index: -1;
+      transform: rotate(90deg) scale(0.8);
+    }
     @include lg {
       left: -50px;
       top: -70px;

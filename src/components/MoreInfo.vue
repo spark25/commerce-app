@@ -57,11 +57,9 @@ export default {};
 
 <style lang="scss">
 .cards_container {
-  // grid-column: 2 / 3;
   padding: 0px 126px;
 
   @include lg {
-    grid-column: 1 !important;
     padding: 0px;
   }
   @include sm {
@@ -73,9 +71,8 @@ export default {};
     display: flex;
     position: relative;
 
-    @include lg {
+    @include md {
       flex-direction: column;
-      padding: 2rem;
       justify-items: center;
       align-content: center;
       overflow: hidden;
@@ -83,7 +80,6 @@ export default {};
 
     @include sm {
       flex-direction: column;
-      padding: 2rem;
       justify-items: center;
       align-content: center;
       overflow: hidden;
@@ -94,6 +90,11 @@ export default {};
       border-radius: 20px;
       position: relative;
       z-index: 9;
+      @include sl {
+        min-width: 430px;
+        height: 548px;
+        align-self: center;
+      }
       @include lg {
         min-width: 430px;
         height: 548px;
@@ -109,6 +110,9 @@ export default {};
         height: 100%;
         width: 100%;
         object-fit: cover;
+        @include sl {
+          object-fit: contain;
+        }
         @include lg {
           object-fit: contain;
         }
@@ -129,6 +133,12 @@ export default {};
         border-radius: 20px;
         z-index: -1;
         filter: blur(25px);
+        @include sl {
+          width: 200px;
+          height: 310px;
+          top: 20px;
+          left: 50%;
+        }
         @include lg {
           width: 200px;
           height: 310px;
@@ -140,6 +150,7 @@ export default {};
           height: 310px;
           top: 20px;
           left: 50%;
+          filter: blur(16px);
         }
       }
     }
@@ -152,12 +163,20 @@ export default {};
       // padding-right: 250px;
       z-index: 5;
 
+      @include sl {
+        padding: 0;
+        padding: 0 2rem;
+        align-self: flex-end;
+      }
       @include lg {
         padding: 0;
+        padding: 0 2rem;
+        align-self: flex-end;
       }
 
       @include sm {
         padding: 0;
+        padding: 0 1rem;
       }
     }
 
@@ -172,8 +191,8 @@ export default {};
       z-index: 9;
 
       @include lg {
-        text-align: center;
-        margin-top: 2rem;
+        // text-align: center;
+        // margin-top: 2rem;
       }
       @include sm {
         font-size: 28px;
@@ -194,7 +213,7 @@ export default {};
       z-index: 9;
 
       @include lg {
-        text-align: center;
+        // text-align: center;
       }
       @include sm {
         font-size: 16px;
@@ -225,11 +244,19 @@ export default {};
         height: 472.16px;
         left: -100px;
         top: 417px;
+
+        @include sl {
+          transform: scale(0.8);
+          opacity: 0.7;
+          top: -100px;
+          right: 20px;
+          z-index: -1;
+        }
         @include lg {
           transform: scale(0.8);
           left: unset;
-          top: 0;
-          right: 0;
+          top: -100px;
+          right: 20px;
           z-index: -1;
         }
         @include sm {
@@ -266,12 +293,12 @@ export default {};
       flex-direction: row-reverse;
 
       @include lg {
-        flex-direction: column-reverse;
+        // flex-direction: column-reverse;
 
-        .__image {
-          margin-top: 2rem;
-          padding-bottom: 2rem;
-        }
+        // .__image {
+        //   margin-top: 2rem;
+        //   padding-bottom: 2rem;
+        // }
       }
       @include sm {
         flex-direction: column-reverse;
@@ -283,8 +310,19 @@ export default {};
       }
       .__content {
         padding: 70px 70px 120px 250px;
+        @include sl {
+          padding: 0;
+          padding: 0 2rem;
+          align-self: unset;
+
+          .__title {
+            margin-top: 0;
+          }
+        }
         @include lg {
           padding: 0;
+          padding: 0 2rem;
+          align-self: unset;
 
           .__title {
             margin-top: 0;
@@ -292,6 +330,7 @@ export default {};
         }
         @include sm {
           padding: 0;
+          padding: 0 1rem;
 
           .__title {
             margin-top: 0;
@@ -314,10 +353,17 @@ export default {};
         bottom: 0px;
         // transform: rotate(90deg);
         transform-origin: center;
-        @include lg {
-          right: 0;
-          bottom: 0px;
+        @include sl {
+          opacity: 0.8;
           transform: scale(0.8);
+          right: 300px;
+          bottom: -100px;
+        }
+        @include lg {
+          opacity: 0.8;
+          transform: scale(0.8);
+          right: 300px;
+          bottom: -100px;
         }
         @include sm {
           right: 0;
@@ -332,13 +378,19 @@ export default {};
         height: 262px;
         right: -129px;
         bottom: 312px;
+
+        @include sl {
+          right: 500px;
+          // right: -129px;
+          top: 312px;
+        }
         @include lg {
-          right: 400px;
+          right: 500px;
           // right: -129px;
           top: 312px;
         }
         @include sm {
-          right: 400px;
+          right: 300px;
           // right: -129px;
           top: 312px;
         }

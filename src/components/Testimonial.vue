@@ -107,6 +107,12 @@ export default {
         z-index: -1;
       }
 
+      @include sl {
+        transform: scale(0.8);
+        top: -200px;
+        left: -100px;
+        z-index: 0;
+      }
       @include lg {
         transform: scale(0.8);
         top: -200px;
@@ -142,6 +148,12 @@ export default {
         z-index: -1;
       }
 
+      @include sl {
+        transform: translateY(-50%) scale(0.6);
+        top: 50%;
+        left: -100px;
+        z-index: 0;
+      }
       @include lg {
         transform: translateY(-50%) scale(0.6);
         top: 50%;
@@ -176,6 +188,13 @@ export default {
         left: 0;
         filter: blur(16px);
         z-index: -1;
+      }
+
+      @include sl {
+        transform: scale(0.8);
+        top: 100%;
+        left: -100px;
+        z-index: 0;
       }
 
       @include lg {
@@ -217,6 +236,12 @@ export default {
         z-index: -1;
       }
 
+      @include sl {
+        // transform: scale(0.8);
+        top: -150px;
+        left: 100%;
+        z-index: 0;
+      }
       @include lg {
         // transform: scale(0.8);
         top: -150px;
@@ -256,6 +281,13 @@ export default {
         z-index: -1;
       }
 
+      @include sl {
+        transform: translateX(-50%) scale(0.8);
+        top: 120%;
+        bottom: -100%;
+        left: 50%;
+        z-index: 0;
+      }
       @include lg {
         transform: translateX(-50%) scale(0.8);
         top: 120%;
@@ -290,6 +322,14 @@ export default {
         content: url("../assets/images/t_dp6.svg");
       }
 
+      @include sl {
+        transform: scale(0.8);
+        top: 50%;
+        right: -120px;
+        left: unset;
+        bottom: unset;
+        z-index: 0;
+      }
       @include lg {
         transform: scale(0.8);
         top: 50%;

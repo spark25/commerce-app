@@ -266,6 +266,18 @@ export default {
       height: 214px;
       left: 385px;
       top: 0;
+      @include sl {
+        left: 0;
+        top: -80px;
+        transform: rotate(90deg) scale(0.5);
+        opacity: 0.5;
+      }
+      @include lg {
+        left: 0;
+        top: -80px;
+        transform: rotate(90deg) scale(0.5);
+        opacity: 0.5;
+      }
       @include md {
         left: 0;
         top: -80px;

@@ -98,6 +98,9 @@ export default {
   .section__hero {
     padding-top: 95px;
 
+    @include sl {
+      padding-top: 1rem;
+    }
     @include lg {
       padding-top: 1rem;
       // flex-direction: column;
@@ -108,6 +111,10 @@ export default {
     }
     .hero_text {
       padding-left: 220px;
+      @include sl {
+        padding: 4rem;
+        padding-right: 0;
+      }
       @include lg {
         padding: 2rem;
         padding-right: 0;
@@ -121,6 +128,12 @@ export default {
         line-height: 95px;
         margin-bottom: 30px;
         // max-width: 80%;
+        @include sl {
+          font-size: 52px;
+          line-height: 52px;
+          margin-bottom: 1rem;
+          // text-align: center;
+        }
         @include lg {
           font-size: 52px;
           line-height: 52px;
@@ -190,7 +203,7 @@ export default {
       // height: 430px;
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center center;
+      background-position: top right;
       @include lg {
         background-size: contain;
         background-position: top;
@@ -205,8 +218,9 @@ export default {
   }
 
   .section__feature {
+    margin-top: 4rem;
 
-    @include lg{
+    @include lg {
       margin-top: 4rem;
     }
   }
@@ -258,7 +272,7 @@ export default {
   background-repeat: no-repeat;
   margin-top: 124px;
   display: grid;
-  overflow-x: hidden;
+  padding-bottom: 0px;
 
   @include sm {
     min-height: max-content;

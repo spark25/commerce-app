@@ -40,6 +40,12 @@ $screen-xl-max: 1200px;
   }
 }
 
+@mixin sl {
+  @media (min-width: #{$screen-xl-max}) and (max-width: 1400px) {
+    @content;
+  }
+}
+
 // Extra large devices
 @mixin xl {
   @media (max-width: #{$screen-xl-max}) {
