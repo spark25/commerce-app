@@ -61,6 +61,11 @@ $screen-xl-max: 1200px;
   box-sizing: border-box;
 }
 
+// to debug unintended overflows 
+// * {
+//   outline: 1px solid red;
+// }
+
 a {
   text-decoration: none;
 }

@@ -188,9 +188,10 @@ export default {};
         left: -100px;
         top: 417px;
         @include sm {
+          transform: scale(0.8);
           left: unset;
           top: 0;
-          right: 2rem;
+          right: 0;
           z-index: -1;
         }
       }
@@ -254,11 +255,12 @@ export default {};
         height: 472.16px;
         right: -50px;
         bottom: 0px;
-        transform: rotate(90deg);
+        // transform: rotate(90deg);
         transform-origin: center;
         @include sm {
-          right: 4rem;
+          right: 0;
           bottom: 0px;
+          transform: scale(0.8);
         }
       }
 

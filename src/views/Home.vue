@@ -233,6 +233,7 @@ export default {
   background-repeat: no-repeat;
   margin-top: 124px;
   display: grid;
+  overflow-x: hidden;
 
   @include sm {
     min-height: max-content;

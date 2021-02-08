@@ -150,7 +150,7 @@ export default {};
       right: -100px;
       top: 30px;
       z-index: -1;
-      transform: rotate(90deg);
+      transform: rotate(90deg) scale(0.8);
     }
   }
 
@@ -164,7 +164,7 @@ export default {};
       left: -50px;
       top: -70px;
       z-index: -1;
-      transform: rotate(90deg);
+      transform: rotate(90deg) scale(0.8);
     }
   }
 }
