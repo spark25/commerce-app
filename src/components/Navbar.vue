@@ -43,7 +43,7 @@
       </button>
 
       <nav class="mobile-navbar">
-        <ul class="mobile-navbar-nav">
+        <ul class="mobile-navbar-nav" :class="{ navOpen: mobileNavOpen }">
           <li class="nav-item">Sell</li>
           <li class="nav-item">Marketplace</li>
           <li class="nav-item">Community</li>
@@ -161,12 +161,21 @@ export default {
 
     .mobile-navbar {
       width: 100%;
+      margin-bottom: 1rem;
       .mobile-navbar-nav {
-        display: grid;
+        display: none;
         justify-content: stretch;
         margin: 0;
         padding: 0;
         list-style: none;
+        opacity: 0;
+        transition: all 0.5s ease-out;
+
+        &.navOpen {
+          display: grid;
+          opacity: 1;
+          animation: fadeInDown 1s;
+        }
         .nav-item {
           height: 2rem;
           font-family: "Roboto", sans-serif;

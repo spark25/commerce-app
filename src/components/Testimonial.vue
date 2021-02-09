@@ -6,22 +6,22 @@
 
     <!-- elements  -->
     <!-- people  -->
-    <div class="_people _people-1">
+    <div class="_people _people-1 hideMe">
       <img src="../assets/images/t_dp1.svg" alt="" />
     </div>
-    <div class="_people _people-2">
+    <div class="_people _people-2 hideMe">
       <img src="../assets/images/t_dp2.svg" alt="" />
     </div>
-    <div class="_people _people-3">
+    <div class="_people _people-3 hideMe">
       <img src="../assets/images/t_dp3.svg" alt="" />
     </div>
-    <div class="_people _people-4">
+    <div class="_people _people-4 hideMe">
       <img src="../assets/images/t_dp4.svg" alt="" />
     </div>
-    <div class="_people _people-5">
+    <div class="_people _people-5 hideMe">
       <img src="../assets/images/t_dp5.svg" alt="" />
     </div>
-    <div class="_people _people-6">
+    <div class="_people _people-6 hideMe">
       <img src="../assets/images/t_dp6.svg" alt="" />
     </div>
   </div>

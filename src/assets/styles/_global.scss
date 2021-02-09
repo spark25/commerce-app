@@ -41,7 +41,7 @@ $screen-xl-max: 1200px;
 }
 
 @mixin sl {
-  @media (min-width: #{$screen-xl-max}) and (max-width: 1400px) {
+  @media (min-width: #{$screen-lg-max}) and (max-width: 1400px) {
     @content;
   }
 }
@@ -271,4 +271,98 @@ nav a {
   background: #9a7dff;
   display: block;
   margin-bottom: 34px;
+}
+
+
+
+// Custom Animations 
+
+.hideMe{
+  opacity: 0;
+}
+
+.popMe {
+  animation: popMe 2s;
+  animation-timing-function: ease-out;
+}
+.fadeMeIn {
+  animation: fadeMeIn 1s;
+}
+
+.fadeMeLeft {
+  animation: fadeInLeft 1s;
+}
+.fadeMeRight {
+  animation: fadeInRight 1s;
+}
+.fadeMeUp {
+  animation: fadeInUp 1s;
+}
+.fadeMeDown {
+  animation: fadeInDown 1s;
+}
+
+@keyframes fadeMeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popMe {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

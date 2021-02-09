@@ -1,6 +1,6 @@
 <template>
   <div class="cards_container container">
-    <div class="horizontal_card __develop">
+    <div class="horizontal_card __develop hideMe">
       <div class="__image">
         <img src="../assets/images/develop_w_limits.svg" alt="" />
       </div>
@@ -21,11 +21,11 @@
 
       <!-- elements  -->
       <div class="__matrix"></div>
-      <div class="__ellipse __ellipse1"></div>
-      <div class="__ellipse __ellipse2"></div>
+      <div class="__ellipse __ellipse1 hideMe"></div>
+      <div class="__ellipse __ellipse2 hideMe"></div>
     </div>
 
-    <div class="horizontal_card __community">
+    <div class="horizontal_card __community hideMe">
       <div class="__image">
         <img src="../assets/images/our_community.svg" alt="" />
       </div>
@@ -45,8 +45,8 @@
       </div>
 
       <div class="__matrix"></div>
-      <div class="__ellipse __ellipse1"></div>
-      <div class="__ellipse __ellipse2"></div>
+      <div class="__ellipse __ellipse1 hideMe"></div>
+      <div class="__ellipse __ellipse2 hideMe"></div>
     </div>
   </div>
 </template>

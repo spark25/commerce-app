@@ -5,7 +5,7 @@
 
     <!-- hero section  -->
     <section class="section__hero d_flex">
-      <div class="hero_text flex_1 d_flex flex_column">
+      <div class="hero_text flex_1 d_flex flex_column fadeMeLeft">
         <h1 class="hero_title montserrat font-bold">
           Anyone, anywhere can start an ecommerce website
         </h1>
@@ -82,6 +82,147 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    featureCardObserver() {
+      const featureCards = document.querySelectorAll(".vertical_card");
+
+      //Observer for Feature caard
+      const options = {
+        root: null,
+        threshold: 0.25,
+        rooMargin: "0px 0xp 200px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else if (entry.isIntersecting) {
+            entry.target.classList.remove("hideMe");
+            entry.target.classList.add("fadeMeUp");
+          }
+          observer.unobserve(entry.target);
+        });
+      }, options);
+
+      //Observing Observers
+      featureCards.forEach((card) => {
+        observer.observe(card);
+      });
+    },
+
+    moreInfoCardRight() {
+      const moreInfoCards = document.querySelectorAll(
+        ".horizontal_card.__develop"
+      );
+
+      //Observer for Cards
+      const options = {
+        root: null,
+        threshold: 0.25,
+        rooMargin: "0px 0xp 200px 0px",
+      };
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else if (entry.isIntersecting) {
+            entry.target.classList.remove("hideMe");
+            entry.target.classList.add("fadeMeRight");
+          }
+          observer.unobserve(entry.target);
+        });
+      }, options);
+
+      moreInfoCards.forEach((card) => {
+        observer.observe(card);
+      });
+    },
+    ellipseObserver() {
+      const ellipses = document.querySelectorAll(".__ellipse");
+
+      //Observer for Cards
+      const options = {
+        root: null,
+        threshold: 1,
+        // rooMargin: "0px 0xp 200px 0px",
+      };
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else if (entry.isIntersecting) {
+            entry.target.classList.remove("hideMe");
+            entry.target.classList.add("popMe");
+          }
+          observer.unobserve(entry.target);
+        });
+      }, options);
+
+      ellipses.forEach((card) => {
+        observer.observe(card);
+      });
+    },
+    peopleObserver() {
+      const people = document.querySelectorAll("._people");
+
+      //Observer for Cards
+      const options = {
+        root: null,
+        threshold: 1,
+        rooMargin: "0px 0xp -200px 0px",
+      };
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else if (entry.isIntersecting) {
+            entry.target.classList.remove("hideMe");
+            entry.target.classList.add("fadeMeIn");
+          }
+          observer.unobserve(entry.target);
+        });
+      }, options);
+
+      people.forEach((card) => {
+        observer.observe(card);
+      });
+    },
+    moreInfoCardLeft() {
+      const moreInfoCards = document.querySelectorAll(
+        ".horizontal_card.__community"
+      );
+
+      //Observer for Cards
+      const options = {
+        root: null,
+        threshold: 0.25,
+        rooMargin: "0px 0xp 200px 0px",
+      };
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else if (entry.isIntersecting) {
+            entry.target.classList.remove("hideMe");
+            entry.target.classList.add("fadeMeLeft");
+          }
+          observer.unobserve(entry.target);
+        });
+      }, options);
+
+      moreInfoCards.forEach((card) => {
+        observer.observe(card);
+      });
+    },
+  },
+  mounted() {
+    this.featureCardObserver();
+    this.moreInfoCardRight();
+    this.moreInfoCardLeft();
+    this.ellipseObserver();
+    this.peopleObserver();
+  },
 };
 </script>
 
@@ -123,6 +264,7 @@ export default {
         padding: 1rem;
       }
       .hero_title {
+        // animation: fadeInLeft 1s;
         color: #272d4e;
         font-size: 85px;
         line-height: 95px;

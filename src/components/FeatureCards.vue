@@ -1,6 +1,6 @@
 <template>
   <div class="feature_card_container container">
-    <div class="vertical_card __wp">
+    <div class="vertical_card __wp hideMe">
       <div class="__image">
         <img src="../assets/images/feature1.svg" alt="" srcset="" />
       </div>
@@ -19,7 +19,7 @@
       </span>
     </div>
 
-    <div class="vertical_card __ext">
+    <div class="vertical_card __ext hideMe">
       <div class="__image">
         <slot name="image">
           <img src="../assets/images/feature2.svg" alt="" srcset="" />
@@ -54,7 +54,7 @@
       </span>
     </div>
 
-    <div class="vertical_card __forum">
+    <div class="vertical_card __forum hideMe">
       <div class="__image">
         <slot name="image">
           <img src="../assets/images/feature3.svg" alt="" srcset="" />

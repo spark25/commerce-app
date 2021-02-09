@@ -13,10 +13,10 @@
       </button>
 
       <!-- Elements  -->
-      <div class="_ellipse _ellipse__1"></div>
-      <div class="_ellipse _ellipse__2"></div>
-      <div class="_ellipse _ellipse__3"></div>
-      <div class="_ellipse _ellipse__4"></div>
+      <div class="__ellipse _ellipse__1 hideMe"></div>
+      <div class="__ellipse _ellipse__2 hideMe"></div>
+      <div class="__ellipse _ellipse__3 hideMe"></div>
+      <div class="__ellipse _ellipse__4 hideMe"></div>
 
       <!-- matrix dots  -->
       <div class="_matrix _matrix__right"></div>
@@ -101,7 +101,7 @@ export default {};
 
   background: #5f37ef;
 
-  ._ellipse,
+  .__ellipse,
   ._matrix {
     position: absolute;
     background-size: contain;
